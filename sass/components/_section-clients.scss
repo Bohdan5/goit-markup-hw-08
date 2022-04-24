@@ -5,9 +5,18 @@
   justify-content: center;
 }
 .clients__item {
-  @include grid__item(30px, 6);
   min-width: 170px;
   height: 92px;
+
+  @media screen and (max-width: 767px) {
+    @include grid__item(30px, 2);
+  }
+  @media screen and (min-width: 768px) {
+    @include grid__item(30px, 3);
+  }
+  @media screen and (min-width: 1200px) {
+    @include grid__item(30px, 6);
+  }
 }
 .clients__link {
   display: flex;

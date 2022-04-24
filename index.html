@@ -16,34 +16,75 @@
 <body>
 <!-- Header -->
 <header class="page-header">
-    <div class="container main-nav">
+    <div class="container">
         <nav class="nav">
             <a href="./" class="logo" lang="en"><span class="logo__accent">Web</span>Studio</a>
+            <!-- modile modal -->
+            <button class="menu-button" type="button" aria-expanded="false" aria-controls="menu-container" data-menu-button>
+                <svg width="40" height="40" aria-label="переключатель мобильного меню">
+                    <use class="icon-cross" href="./images/icons.svg#icon-cross"></use>
+                    <use class="icon-menu" href="./images/icons.svg#icon-menu"></use>
+                </svg>
+            </button>
 
-            <ul class="site-nav">
-                <li class="site-nav__item"><a href="./" class="site-nav__link site-nav__link--active ">Студия</a></li>
-                <li class="site-nav__item"><a href="./portfolio.html" class="site-nav__link">Портфолио</a></li>
-                <li class="site-nav__item"><a href="" class="site-nav__link">Контакты</a></li>
-            </ul>
+            <div class="menu-backdrop" data-menu>
+                <div class="menu-container" id="menu-container" >
+                    <ul class="site-nav">
+                        <li class="site-nav__item"><a href="./" class="site-nav__link site-nav__link--active ">Студия</a></li>
+                        <li class="site-nav__item"><a href="./portfolio.html" class="site-nav__link">Портфолио</a></li>
+                        <li class="site-nav__item"><a href="" class="site-nav__link">Контакты</a></li>
+                    </ul>
+                    <!-- Contact-navigation -->
+                    <ul class="contact-nav">
+                        <li class="contact-nav__item">
+                            <a href="tel:+380961111111" class="contact-nav__link">
+                                <svg class="contact-nav__icon" width="10" height="16">
+                                    <use href="./images/icons.svg#icon-smartphone"></use>
+                                </svg>
+                                +38 096 111 11 11
+                            </a>
+                        </li>
+                        <li class="contact-nav__item">
+                            <a href="mailto:info@devstudio.com" class="contact-nav__link">
+                                <svg class="contact-nav__icon" width="16" height="12">
+                                    <use href="./images/icons.svg#icon-envelope"></use>
+                                </svg>
+                                info@devstudio.com
+                            </a>
+                        </li>
+                
+                    </ul>
+                
+                    <!-- Mobile social navigation -->
+                    <ul class="mobile-social-nav">
+                        <li class="mobile-social-nav__item">
+                            <a class="mobile-social-nav__link" href="">Instagram</a>
+                            <svg class="mobile-social-nav__line" width="1" height="22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke="#212121" stroke-opacity=".2" d="M.5 0v22" />
+                            </svg>
+                        </li>
+                        <li class="mobile-social-nav__item">
+                            <a class="mobile-social-nav__link" href="">Twitter</a>
+                            <svg class="mobile-social-nav__line" width="1" height="22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke="#212121" stroke-opacity=".2" d="M.5 0v22" />
+                            </svg>
+                        </li>
+                        <li class="mobile-social-nav__item">
+                            <a class="mobile-social-nav__link" href="">Facebook</a>
+                            <svg class="mobile-social-nav__line" width="1" height="22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke="#212121" stroke-opacity=".2" d="M.5 0v22" />
+                            </svg>
+                        </li>
+                        <li class="mobile-social-nav__item">
+                            <a class="mobile-social-nav__link" href="">LinkedIn</a>
+                
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav>
 
-        <ul class="contact-nav">
-            <li class="contact-nav__item">
-                <a href="mailto:info@devstudio.com" class="contact-nav__link">
-                    <svg class="contact-nav__icon" width="16" height="12">
-                        <use href="./images/icons.svg#icon-envelope"></use>
-                    </svg>
-                    info@devstudio.com
-                </a>
-            </li>
-            <li class="contact-nav__item">
-                <a href="tel:+380961111111" class="contact-nav__link">
-                    <svg class="contact-nav__icon" width="10" height="16">
-                        <use href="./images/icons.svg#icon-smartphone"></use>
-                    </svg>
-                    +38 096 111 11 11</a>
-            </li>
-        </ul>
+        
     </div>
 </header>
 
@@ -103,13 +144,12 @@
     <!-- Checkbox Policy -->
                         <label class="checkbox__field">
                             <input type="checkbox" name="policy" class="checkbox">
-                            
                             <span class="checkbox__icon">
                                 <svg class="icon-checked" width="16" height="15">
                                     <use href="./images/icons.svg#icon-checked"></use>
                                 </svg>
                             </span>
-                            
+                        
                             <span class="checkbox__label">Соглашаюсь с рассылкой и принимаю <a href=""
                                     class="checkbox__link link">Условия договора</a></span>
     
@@ -127,7 +167,6 @@
         <div class="container">
             <h2 class="section__title visually-hidden">Особенности</h2>
             <ul class="features">
-
                 <li class="features__item">
                     <div class="features__icon-bgc">
                         <svg class="features__icon">
@@ -176,7 +215,7 @@
     </section>
 
     <!-- Чем мы занимаемся -->
-    <section class="section">
+    <section class="section services__section">
         <div class="container">
             <h2 class="section__title">Чем мы занимаемся</h2>
             <ul class="services">
@@ -208,8 +247,20 @@
     
                 <!-- Team member №1 -->
                 <li class="team-member">
-                    <div class="team-member__thumb"><img src="./images/team/img.jpg" alt="Product Designer" width="270"
-                            height="260"></div>
+                    <div class="team-member__thumb">
+                        <img srcset="
+                        ./images/team/T1-270.jpg 270w,
+                        ./images/team/T1-450.jpg 450w,
+                        ./images/team/T1-354.jpg 354w,
+                        ./images/team/T1-540.jpg 540w,
+                        ./images/team/T1-708.jpg 708w,
+                        ./images/team/T1-900.jpg 900w" 
+                        src="./images/team/T1-270.jpg"
+                        alt="Игорь Демьяненко"
+                        sizes="(min-width:1200px) 270px,(min-width:768px) 354px, (min-width:480px) 450px, 100vw" 
+                        class="team-member__img"
+                        >
+                    </div>
     
                     <div class="team-member__meta">
                         <h3 class="team-member__name">Игорь Демьяненко</h3>
@@ -219,7 +270,7 @@
                             <!-- instagram -->
                             <li class="social-connect__item">
                                 <a href="" class="social-connect__link">
-                                    <svg class="social-connect__icon">
+                                    <svg class="social-connect__icon" width="20" height="20">
                                         <use href="./images/icons.svg#icon-instagram"></use>
                                     </svg>
                                 </a>
@@ -227,7 +278,7 @@
                             <!-- twitter -->
                             <li class="social-connect__item">
                                 <a href="" class="social-connect__link">
-                                    <svg class="social-connect__icon">
+                                    <svg class="social-connect__icon" width="20" height="20">
                                         <use href="./images/icons.svg#icon-twitter"></use>
                                     </svg>
                                 </a>
@@ -235,7 +286,7 @@
                             <!-- facebook -->
                             <li class="social-connect__item">
                                 <a href="" class="social-connect__link">
-                                    <svg class="social-connect__icon">
+                                    <svg class="social-connect__icon" width="20" height="20">
                                         <use href="./images/icons.svg#icon-facebook"></use>
                                     </svg>
                                 </a>
@@ -243,7 +294,7 @@
                             <!-- linkedin -->
                             <li class="social-connect__item">
                                 <a href="" class="social-connect__link">
-                                    <svg class="social-connect__icon">
+                                    <svg class="social-connect__icon" width="20" height="20">
                                         <use href="./images/icons.svg#icon-linkedin"></use>
                                     </svg>
                                 </a>
@@ -254,9 +305,30 @@
     
                 <!-- Team member №2 -->
                 <li class="team-member">
-                    <div class="team-member__thumb"><img src="./images/team/img-1.jpg" alt="Product Designer" width="270"
-                            height="260">
+                    <div class="team-member__thumb">
+                        <img srcset="
+                        ./images/team/T2-270.jpg 270w,
+                        ./images/team/T2-450.jpg 450w,
+                        ./images/team/T2-354.jpg 354w,
+                        ./images/team/T2-540.jpg 540w,
+                        ./images/team/T2-708.jpg 708w,
+                        ./images/team/T2-900.jpg 900w" 
+                        src="./images/team/T2-270.jpg"
+                        alt="Ольга Репина"
+                        sizes="(min-width:1200px) 270px,(min-width:768px) 354px, (min-width:480px) 450px, 100vw" 
+                        class="team-member__img"
+                        >
                     </div>
+                    <!-- <div class="team-member__thumb">
+                        <img srcset="
+                        ./images/team/img-1.jpg 270w,
+                        ./images/team/img-1@2x.jpg 540w"
+                        src="./images/team/img.jpg" 
+                        alt="Ольга Репина"
+                        sizes="(min-width:1200px) 25vw,(min-width:768px) 50vw, 100vw"
+                        class="team-member__img" 
+                        >
+                    </div> -->
     
                     <div class="team-member__meta">
                         <h3 class="team-member__name">Ольга Репина</h3>
@@ -266,7 +338,7 @@
                             <!-- instagram -->
                             <li class="social-connect__item">
                                 <a href="" class="social-connect__link">
-                                    <svg class="social-connect__icon">
+                                    <svg class="social-connect__icon" width="20" height="20">
                                         <use href="./images/icons.svg#icon-instagram"></use>
                                     </svg>
                                 </a>
@@ -274,7 +346,7 @@
                             <!-- twitter -->
                             <li class="social-connect__item">
                                 <a href="" class="social-connect__link">
-                                    <svg class="social-connect__icon">
+                                    <svg class="social-connect__icon" width="20" height="20">
                                         <use href="./images/icons.svg#icon-twitter"></use>
                                     </svg>
                                 </a>
@@ -282,7 +354,7 @@
                             <!-- facebook -->
                             <li class="social-connect__item">
                                 <a href="" class="social-connect__link">
-                                    <svg class="social-connect__icon">
+                                    <svg class="social-connect__icon" width="20" height="20">
                                         <use href="./images/icons.svg#icon-facebook"></use>
                                     </svg>
                                 </a>
@@ -290,7 +362,7 @@
                             <!-- linkedin -->
                             <li class="social-connect__item">
                                 <a href="" class="social-connect__link">
-                                    <svg class="social-connect__icon">
+                                    <svg class="social-connect__icon" width="20" height="20">
                                         <use href="./images/icons.svg#icon-linkedin"></use>
                                     </svg>
                                 </a>
@@ -301,9 +373,30 @@
     
                 <!-- Team member №3 -->
                 <li class="team-member">
-                    <div class="team-member__thumb"><img src="./images/team/img-2.jpg" alt="Product Designer" width="270"
-                            height="260">
+                    <div class="team-member__thumb">
+                        <img srcset="
+                        ./images/team/T3-270.jpg 270w,
+                        ./images/team/T3-450.jpg 450w,
+                        ./images/team/T3-354.jpg 354w,
+                        ./images/team/T3-540.jpg 540w,
+                        ./images/team/T3-708.jpg 708w,
+                        ./images/team/T3-900.jpg 900w" 
+                        src="./images/team/T3-270.jpg"
+                        alt="Николай Тарасов"
+                        sizes="(min-width:1200px) 270px,(min-width:768px) 354px, (min-width:480px) 450px, 100vw" 
+                        class="team-member__img"
+                        >
                     </div>
+                    <!-- <div class="team-member__thumb"><img 
+                        srcset="
+                        ./images/team/img-2.jpg 270w,
+                        ./images/team/img-2@2x.jpg 540w"
+                        src="./images/team/img-2.jpg" 
+                        alt="Николай Тарасов" 
+                        sizes="(min-width:1200px) 25vw,(min-width:768px) 50vw, 100vw"
+                        class="team-member__img"
+                        >
+                    </div> -->
     
                     <div class="team-member__meta">
                         <h3 class="team-member__name">Николай Тарасов</h3>
@@ -313,7 +406,7 @@
                             <!-- instagram -->
                             <li class="social-connect__item">
                                 <a href="" class="social-connect__link">
-                                    <svg class="social-connect__icon">
+                                    <svg class="social-connect__icon" width="20" height="20">
                                         <use href="./images/icons.svg#icon-instagram"></use>
                                     </svg>
                                 </a>
@@ -321,7 +414,7 @@
                             <!-- twitter -->
                             <li class="social-connect__item">
                                 <a href="" class="social-connect__link">
-                                    <svg class="social-connect__icon">
+                                    <svg class="social-connect__icon" width="20" height="20">
                                         <use href="./images/icons.svg#icon-twitter"></use>
                                     </svg>
                                 </a>
@@ -329,7 +422,7 @@
                             <!-- facebook -->
                             <li class="social-connect__item">
                                 <a href="" class="social-connect__link">
-                                    <svg class="social-connect__icon">
+                                    <svg class="social-connect__icon" width="20" height="20">
                                         <use href="./images/icons.svg#icon-facebook"></use>
                                     </svg>
                                 </a>
@@ -337,7 +430,7 @@
                             <!-- linkedin -->
                             <li class="social-connect__item">
                                 <a href="" class="social-connect__link">
-                                    <svg class="social-connect__icon">
+                                    <svg class="social-connect__icon" width="20" height="20">
                                         <use href="./images/icons.svg#icon-linkedin"></use>
                                     </svg>
                                 </a>
@@ -348,9 +441,30 @@
     
                 <!-- Team member №4 -->
                 <li class="team-member">
-                    <div class="team-member__thumb"><img src="./images/team/img-3.jpg" alt="Product Designer" width="270"
-                            height="260">
+                    <div class="team-member__thumb">
+                        <img srcset="
+                        ./images/team/T4-270.jpg 270w,
+                        ./images/team/T4-450.jpg 450w,
+                        ./images/team/T4-354.jpg 354w,
+                        ./images/team/T4-540.jpg 540w,
+                        ./images/team/T4-708.jpg 708w,
+                        ./images/team/T4-900.jpg 900w" 
+                        src="./images/team/T4-270.jpg"
+                        alt="Михаил Ермаков"
+                        sizes="(min-width:1200px) 270px,(min-width:768px) 354px, (min-width:480px) 450px, 100vw" 
+                        class="team-member__img"
+                        >
                     </div>
+                    <!-- <div class="team-member__thumb"><img 
+                        srcset="
+                        ./images/team/img-3.jpg 270w,
+                        ./images/team/img-3@2x.jpg 540w"
+                        src="./images/team/img-3.jpg" 
+                        alt="Михаил Ермаков"
+                        sizes="(min-width:1200px) 25vw,(min-width:768px) 50vw, 100vw"
+                        class="team-member__img"
+                        >
+                    </div> -->
     
                     <div class="team-member__meta">
                         <h3 class="team-member__name">Михаил Ермаков</h3>
@@ -360,7 +474,7 @@
                             <!-- instagram -->
                             <li class="social-connect__item">
                                 <a href="" class="social-connect__link">
-                                    <svg class="social-connect__icon">
+                                    <svg class="social-connect__icon" width="20" height="20">
                                         <use href="./images/icons.svg#icon-instagram"></use>
                                     </svg>
                                 </a>
@@ -368,7 +482,7 @@
                             <!-- twitter -->
                             <li class="social-connect__item">
                                 <a href="" class="social-connect__link">
-                                    <svg class="social-connect__icon">
+                                    <svg class="social-connect__icon" width="20" height="20">
                                         <use href="./images/icons.svg#icon-twitter"></use>
                                     </svg>
                                 </a>
@@ -376,7 +490,7 @@
                             <!-- facebook -->
                             <li class="social-connect__item">
                                 <a href="" class="social-connect__link">
-                                    <svg class="social-connect__icon">
+                                    <svg class="social-connect__icon" width="20" height="20">
                                         <use href="./images/icons.svg#icon-facebook"></use>
                                     </svg>
                                 </a>
@@ -384,7 +498,7 @@
                             <!-- linkedin -->
                             <li class="social-connect__item">
                                 <a href="" class="social-connect__link">
-                                    <svg class="social-connect__icon">
+                                    <svg class="social-connect__icon" width="20" height="20">
                                         <use href="./images/icons.svg#icon-linkedin"></use>
                                     </svg>
                                 </a>
@@ -475,7 +589,7 @@
                 <!-- instagram -->
                 <li class="social-connect__item social-connect__item--darkmode">
                     <a href="" class="social-connect__link">
-                        <svg class="social-connect__icon social-connect__icon--darkmode">
+                        <svg class="social-connect__icon social-connect__icon--darkmode" width="20" height="20">
                             <use href="./images/icons.svg#icon-instagram"></use>
                         </svg>
                     </a>
@@ -483,7 +597,7 @@
                 <!-- twitter -->
                 <li class="social-connect__item social-connect__item--darkmode">
                     <a href="" class="social-connect__link">
-                        <svg class="social-connect__icon social-connect__icon--darkmode">
+                        <svg class="social-connect__icon social-connect__icon--darkmode" width="20" height="20">
                             <use href="./images/icons.svg#icon-twitter"></use>
                         </svg>
                     </a>
@@ -491,7 +605,7 @@
                 <!-- facebook -->
                 <li class="social-connect__item social-connect__item--darkmode">
                     <a href="" class="social-connect__link">
-                        <svg class="social-connect__icon social-connect__icon--darkmode">
+                        <svg class="social-connect__icon social-connect__icon--darkmode" width="20" height="20">
                             <use href="./images/icons.svg#icon-facebook"></use>
                         </svg>
                     </a>
@@ -499,7 +613,7 @@
                 <!-- linkedin -->
                 <li class="social-connect__item social-connect__item--darkmode">
                     <a href="" class="social-connect__link">
-                        <svg class="social-connect__icon social-connect__icon--darkmode">
+                        <svg class="social-connect__icon social-connect__icon--darkmode" width="20" height="20">
                             <use href="./images/icons.svg#icon-linkedin"></use>
                         </svg>
                     </a>
@@ -514,7 +628,7 @@
                     <input type="email" class="footer-form__input" name="E-mail" placeholder="E-mail">
                     <span class="footer-form__label visually-hidden">E-mail</span>
                 </label>
-                <button type="submit" class="form-button form-button--apend">
+                <button type="submit" class="form-button footer__form-button">
                     <span>Подписаться</span>
                     <svg class="form-button__icon form-button__icon--apend" width="24" height="24">
                         <use href="./images/icons.svg#icon-footer-form-send"></use>
@@ -524,6 +638,7 @@
         </div>
     </div>
 </footer>
-<script src="./modal.js"></script>       
+<script src="./modal.js"></script>   
+<script src="./menu.js"></script>
 </body>
 </html>
